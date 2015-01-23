@@ -8,17 +8,17 @@
 class Game_World{
 public:
 
-    /**uint32_t field_width;
+    uint32_t field_width;
     uint32_t field_height;
 
     //km^3
-    double field_size;*/
+    double field_size;
 
     //s
     double elapsed_time;
 
-    /**std::vector< std::vector<Vector> > field;
-    std::vector< std::vector<Vector> > field_show;*/
+    std::vector< std::vector<Vector> > field;
+    std::vector< std::vector<Vector> > field_show;
 
     std::vector<Particle> particles;
 

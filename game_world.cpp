@@ -9,15 +9,15 @@ Game_World::Game_World(){
 }
 
 void Game_World::clear_world(){
-    /**field_width=0;
+    field_width=0;
     field_height=0;
 
-    field_size=0.0;*/
+    field_size=0.0;
 
     elapsed_time=0.0;
 
-    /**field.clear();
-    field_show.clear();*/
+    field.clear();
+    field_show.clear();
     particles.clear();
 }
 
@@ -26,7 +26,7 @@ void Game_World::generate_world(){
 
     game.center_camera(Collision_Circ(0.0,0.0,0.0));
 
-    /**field_width=100;
+    field_width=100;
     field_height=100;
 
     field_size=1000.0;
@@ -34,7 +34,7 @@ void Game_World::generate_world(){
     field.resize(field_width,vector<Vector>(field_height));
     field_show.resize(field_width,vector<Vector>(field_height));
 
-    game.center_camera(Collision_Rect(((double)field_width/2.0)*field_size,((double)field_width/2.0)*field_size,0.0,0.0));*/
+    game.center_camera(Collision_Rect(((double)field_width/2.0)*field_size,((double)field_width/2.0)*field_size,0.0,0.0));
 }
 
 void Game_World::tick(){
@@ -44,7 +44,7 @@ void Game_World::ai(){
 }
 
 void Game_World::movement(){
-    /**for(int i=0;i<particles.size();i++){
+    for(int i=0;i<particles.size();i++){
         particles[i].check_field(field);
     }
 
@@ -53,7 +53,7 @@ void Game_World::movement(){
             field[x][y].magnitude=0.0;
             field_show[x][y].magnitude=0.0;
         }
-    }*/
+    }
 
     for(int i=0;i<particles.size();i++){
         particles[i].accelerate();
@@ -63,7 +63,7 @@ void Game_World::movement(){
         particles[i].movement();
     }
 
-    /**Collision_Rect box_field(0,0,field_width*(uint32_t)field_size,field_height*(uint32_t)field_size);
+    Collision_Rect box_field(0,0,field_width*(uint32_t)field_size,field_height*(uint32_t)field_size);
     for(int i=0;i<particles.size();i++){
         if(!collision_check_circ_rect(particles[i].circle,box_field)){
             particles.erase(particles.begin()+i);
@@ -73,7 +73,7 @@ void Game_World::movement(){
 
     for(int i=0;i<particles.size();i++){
         particles[i].modify_field(field,field_show);
-    }*/
+    }
 }
 
 void Game_World::events(){
@@ -84,7 +84,7 @@ void Game_World::animate(){
 }
 
 void Game_World::render(){
-    /**int camera_x=(int)(game.camera.x/(field_size*game.camera_zoom));
+    int camera_x=(int)(game.camera.x/(field_size*game.camera_zoom));
     int camera_y=(int)(game.camera.y/(field_size*game.camera_zoom));
     int end_x=camera_x+(int)(game.camera.w/(field_size*game.camera_zoom))+2;
     int end_y=camera_y+(int)(game.camera.h/(field_size*game.camera_zoom))+2;
@@ -119,7 +119,7 @@ void Game_World::render(){
                 }
             }
         }
-    }*/
+    }
 
     for(int i=0;i<particles.size();i++){
         particles[i].render();

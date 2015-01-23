@@ -18,13 +18,13 @@ Particle::Particle(double get_mass,double get_density,double x,double y,Vector g
     velocity=get_velocity;
 }
 
-/**int Particle::get_range(){
+int Particle::get_range(){
     ///return (int)ceil(circle.r/game.world.field_size)+(int)ceil(GRAVITY*mass*0.00005018043318142525260368403544)+1;
     ///return (int)ceil(circle.r/game.world.field_size)+10;
     return game.world.field_width*2;
-}*/
+}
 
-/**void Particle::check_field(const vector< vector<Vector> >& field){
+void Particle::check_field(const vector< vector<Vector> >& field){
     int range=get_range();
 
     int pos_x=(int)floor(circle.x/game.world.field_size);
@@ -47,7 +47,7 @@ Particle::Particle(double get_mass,double get_density,double x,double y,Vector g
             }
         }
     }
-}*/
+}
 
 void Particle::accelerate(){
     acceleration=force/mass;
@@ -89,7 +89,7 @@ void Particle::movement(){
     }*/
 }
 
-/**void Particle::modify_field(vector< vector<Vector> >& field,vector< vector<Vector> >& field_show){
+void Particle::modify_field(vector< vector<Vector> >& field,vector< vector<Vector> >& field_show){
     int range=get_range();
 
     int pos_x=(int)floor(circle.x/game.world.field_size);
@@ -108,11 +108,12 @@ void Particle::movement(){
                               get_angle_to_rect(circle,Collision_Rect((double)x*game.world.field_size,(double)y*game.world.field_size,game.world.field_size,game.world.field_size),game.camera));
 
                 field[x][y]+=effect.opposite();
+                ///field_show[x][y]+=effect.opposite();
                 field_show[x][y]+=effect.opposite()/pow(distance,2.0);
             }
         }
     }
-}*/
+}
 
 void Particle::render(){
     if(collision_check_circ_rect(circle*game.camera_zoom,game.camera)){
