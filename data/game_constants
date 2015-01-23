@@ -1,0 +1,61 @@
+<game_constant>
+	name:zoom_rate
+	value:0.1
+</game_constant>
+
+<game_constant>
+	name:zoom_min
+	value:0.00642980877419931866235443436667
+</game_constant>
+
+<game_constant>
+	name:zoom_max
+	value:0.04018630483874574163971521479168
+</game_constant>
+
+<game_constant>
+	name:time_scale
+	value:100.0
+</game_constant>
+
+<game_constant>
+	// km^3 kg^-1 s^-2
+	name:gravity
+	value:0.0000000000000000000667384
+</game_constant>
+
+<game_constant>
+	// kg
+	name:solar_mass
+	value:1988550000000000000000000000000.0
+</game_constant>
+
+<game_constant>
+	// kg/km^3
+	name:solar_density
+	value:1408000000000.0
+</game_constant>
+
+<game_constant>
+	// kg
+	name:earth_mass
+	value:5972000000000000000000000.0
+</game_constant>
+
+<game_constant>
+	// kg/km^3
+	name:earth_density
+	value:5515000000000.0
+</game_constant>
+
+<game_constant>
+	// kg
+	name:moon_mass
+	value:73477000000000000000000.0
+</game_constant>
+
+<game_constant>
+	// kg/km^3
+	name:moon_density
+	value:3346400000000.0
+</game_constant>
